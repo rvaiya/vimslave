@@ -82,6 +82,13 @@ int main(int argc, char *argv[]) {
 		}
 
 		rm_nl(line);
+
+		//Never kill clear prematurely 
+		if(!strcmp(line, "clear")) { 
+			system("clear");
+			continue;
+		}
+
 		kill_current();
 		spawn(line);
 
